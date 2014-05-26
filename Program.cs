@@ -10,6 +10,10 @@ namespace PovertyLife
     {
         static void Main(string[] args)
         {
+            Character newCharacter = new Character();
+            Console.WriteLine(newCharacter.characterSummary());
+
+            Console.ReadLine();
         }
     }
 }

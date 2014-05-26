@@ -12,7 +12,5 @@ namespace PovertyLife
 
         protected Character characterAffected;
 
-        protected abstract void doEventEffect();
-
     }
 }

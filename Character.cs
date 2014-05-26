@@ -20,9 +20,10 @@ namespace PovertyLife
 
         CharacterTrait job = new CharacterTrait();
 
-        private ArrayList traitList = new ArrayList();
-        private ArrayList friendsList = new ArrayList();
-        private ArrayList familyList = new ArrayList();
+        public HashSet<CharacterTrait> traitList { get; set; }
+        public HashSet<PhysicalInventoryItem> physicalInventory { get; set; }
+        public HashSet<Character> friendsList { get; set; }
+        public HashSet<Character> familyList{ get; set; }
 
         public Character()
         {
@@ -31,14 +32,16 @@ namespace PovertyLife
             age = 0;
             freeTime = 168; //7 days * 24 hrs/day = 168 hours
             job = null;
+            characterMentalHealth = new MentalHealth(0);
+            characterPhysicalHealth = new PhysicalHealth(0);
+            characterMoney = new Money(0);
         }
 
         public string characterSummary()
         {
-            string summary = firstName + " " + lastName + "is " + age + " years old."
-                + "|Physical Health: " + characterPhysicalHealth.currentValue + " |"
-                + "|Mental Health: " + characterMentalHealth.currentValue + " |"
-                + "|Money: " + characterMoney.currentValue + " |";
+            string summary = firstName + " " + lastName + "is " + age + " years old." + " |"
+                + "Physical Health: " + characterPhysicalHealth.currentValue + " |"
+                + "Mental Health: " + characterMentalHealth.currentValue + " |";
 
             return summary;
         }
@@ -47,21 +50,6 @@ namespace PovertyLife
         {
             freeTime = freeTime + freeTimeEffect;
             return freeTime;
-        }
-
-        public void addFriend(Character characterReceivingFriend, Character newFriend)
-        {
-            characterReceivingFriend.friendsList.Add(newFriend);
-        }
-
-        public void addFamily(Character characterReceivingFamily, Character newFamily)
-        {
-            characterReceivingFamily.familyList.Add(newFamily);
-        }
-
-        public void addTrait(Character characterReceivingTrait, CharacterTrait newTrait)
-        {
-            characterReceivingTrait.traitList.Add(newTrait);
         }
 
     }

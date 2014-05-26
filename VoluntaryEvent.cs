@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PovertyLife
 {
-    class VoluntaryEvent
+    class VoluntaryEvent : DecisionEvent
     {
+
     }
 }

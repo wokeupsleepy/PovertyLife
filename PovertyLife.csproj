@@ -45,8 +45,10 @@
     <Compile Include="Character.cs" />
     <Compile Include="CharacterStat.cs" />
     <Compile Include="CharacterTrait.cs" />
+    <Compile Include="PhysicalInventoryItem.cs" />
     <Compile Include="DecisionEvent.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="GameEffect.cs" />
     <Compile Include="MentalHealth.cs" />
     <Compile Include="Money.cs" />
     <Compile Include="PhysicalHealth.cs" />
