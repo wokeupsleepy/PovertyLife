@@ -10,9 +10,10 @@ namespace PovertyLife
     {
         protected Character affectedCharacter;
 
-        protected void additionHelperMethod(int startValue, int change)
+        protected int additionHelperMethod(int startValue, int change)
         {
             int finalValue = startValue + change;
+            return finalValue;
         }
 
     }
@@ -25,13 +26,17 @@ namespace PovertyLife
             switch (statChangeType)
             {
                 case 1:
-                    additionHelperMethod(affectedCharacter.characterMentalHealth.currentValue, statChangeMagnitude);
+                    affectedCharacter.characterMentalHealth.currentValue = 
+                        additionHelperMethod(affectedCharacter.characterMentalHealth.currentValue, statChangeMagnitude);
+
                     break;
                 case 2:
-                    additionHelperMethod(affectedCharacter.characterPhysicalHealth.currentValue, statChangeMagnitude);
+                    affectedCharacter.characterPhysicalHealth.currentValue = 
+                        additionHelperMethod(affectedCharacter.characterPhysicalHealth.currentValue, statChangeMagnitude);
                     break;
                 case 3:
-                    additionHelperMethod(affectedCharacter.characterMoney.currentValue, statChangeMagnitude);
+                    affectedCharacter.characterMoney.currentValue = 
+                        additionHelperMethod(affectedCharacter.characterMoney.currentValue, statChangeMagnitude);
                     break;
                 default:
                     Console.WriteLine("USE A PROPER GameEffectStat statChangeType input value");

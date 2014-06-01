@@ -18,12 +18,14 @@ namespace PovertyLife
         public PhysicalHealth characterPhysicalHealth { get; set; }
         public Money characterMoney { get; set; }
 
-        CharacterTrait job = new CharacterTrait();
+        public CharacterTrait job { get; set; }
 
         public HashSet<CharacterTrait> traitList { get; set; }
         public HashSet<PhysicalInventoryItem> physicalInventory { get; set; }
         public HashSet<Character> friendsList { get; set; }
-        public HashSet<Character> familyList{ get; set; }
+        public HashSet<Character> familyList { get; set; }
+
+        public HashSet<int> dumbHashSet = new HashSet<int>();
 
         public Character()
         {
@@ -35,13 +37,34 @@ namespace PovertyLife
             characterMentalHealth = new MentalHealth(0);
             characterPhysicalHealth = new PhysicalHealth(0);
             characterMoney = new Money(0);
+
+            traitList = new HashSet<CharacterTrait>();
+            physicalInventory = new HashSet<PhysicalInventoryItem>();
+            friendsList = new HashSet<Character>();
+            familyList = new HashSet<Character>();
+        }
+
+        public Character(string inputFirstName, string inputLastName, int inputAge)
+        {
+            firstName = inputFirstName;
+            lastName = inputLastName;
+            age = inputAge;
+            characterMentalHealth = new MentalHealth(0);
+            characterPhysicalHealth = new PhysicalHealth(0);
+            characterMoney = new Money(0);
+
+            traitList = new HashSet<CharacterTrait>();
+            physicalInventory = new HashSet<PhysicalInventoryItem>();
+            friendsList = new HashSet<Character>();
+            familyList = new HashSet<Character>();
         }
 
         public string characterSummary()
         {
-            string summary = firstName + " " + lastName + "is " + age + " years old." + " |"
+            string summary = firstName + " " + lastName + " is " + age + " years old." + " |"
                 + "Physical Health: " + characterPhysicalHealth.currentValue + " |"
-                + "Mental Health: " + characterMentalHealth.currentValue + " |";
+                + "Mental Health: " + characterMentalHealth.currentValue + " |"
+                + "Money: " + characterMoney.currentValue;
 
             return summary;
         }

@@ -9,7 +9,12 @@ namespace PovertyLife
     class CharacterTrait
     {
         public string traitName { get; set; }
-        Character affectedCharacter;
-        
+        public GameEffect traitEffect { get; set; }
+
+        public CharacterTrait(string inputName, GameEffect inputEffect)
+        {
+            traitName = inputName;
+            traitEffect = inputEffect;
+        }
     }
 }
