@@ -25,8 +25,6 @@ namespace PovertyLife
         public HashSet<Character> friendsList { get; set; }
         public HashSet<Character> familyList { get; set; }
 
-        public HashSet<int> dumbHashSet = new HashSet<int>();
-
         public Character()
         {
             firstName = "";
@@ -59,7 +57,7 @@ namespace PovertyLife
             familyList = new HashSet<Character>();
         }
 
-        public string characterSummary()
+        public string CharacterSummary()
         {
             string summary = firstName + " " + lastName + " is " + age + " years old." + " |"
                 + "Physical Health: " + characterPhysicalHealth.currentValue + " |"
@@ -69,7 +67,18 @@ namespace PovertyLife
             return summary;
         }
 
-        public int calculateRemainingFreeTime(int freeTimeEffect)
+        public override string ToString()
+        {
+            return this.firstName + " " + this.lastName;
+        }
+
+        public string DisplayCharacterList(HashSet<Character> inputList)
+        {
+            string hashToString = string.Join(", ", inputList);
+            return hashToString;
+        }
+
+        public int CalculateRemainingFreeTime(int freeTimeEffect)
         {
             freeTime = freeTime + freeTimeEffect;
             return freeTime;

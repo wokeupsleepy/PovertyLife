@@ -11,27 +11,28 @@ namespace PovertyLife
         static void Main(string[] args)
         {
             Character arnold = new Character("Arnold", "Strong", 45);
-            Console.WriteLine(arnold.characterSummary());
+            Console.WriteLine(arnold.CharacterSummary());
 
             GameEffect firstEffect = new GameEffectStat(arnold, 1, 5);
-            Console.WriteLine(arnold.characterSummary());
+            Console.WriteLine(arnold.CharacterSummary());
             GameEffect secondEffect = new GameEffectStat(arnold, 2, 6);
-            Console.WriteLine(arnold.characterSummary());
+            Console.WriteLine(arnold.CharacterSummary());
             GameEffect thirdEffect = new GameEffectStat(arnold, 3, 7);
-            Console.WriteLine(arnold.characterSummary());
+            Console.WriteLine(arnold.CharacterSummary());
             GameEffect fourthEffect = new GameEffectStat(arnold, 1, -2);
-            Console.WriteLine(arnold.characterSummary());
+            Console.WriteLine(arnold.CharacterSummary());
 
             Character arnoldWife = new Character("Maria", "Shriver", 43);
-            Console.WriteLine(arnoldWife.characterSummary());
+            Console.WriteLine(arnoldWife.CharacterSummary());
+            Character arnoldSon = new Character("John", "Marston", 43);
+            Console.WriteLine(arnoldSon.CharacterSummary());
 
             try
             {
-                arnold.dumbHashSet.Add(3);
                 arnold.familyList.Add(arnoldWife);
-                Console.WriteLine(arnold.familyList.ToString());
-                //create method to print out contents of a HashSet, probably will need to iterate every element
-
+                arnold.familyList.Add(arnoldSon);
+                string dumbstring = arnold.DisplayCharacterList(arnold.familyList);
+                Console.WriteLine(dumbstring);
             }
             catch (NullReferenceException e)
             {
