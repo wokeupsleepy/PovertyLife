@@ -18,20 +18,21 @@ namespace PovertyLife
         public PhysicalHealth characterPhysicalHealth { get; set; }
         public Money characterMoney { get; set; }
 
-        public CharacterTrait job { get; set; }
+        public CharacterJob job { get; set; }
 
         public HashSet<CharacterTrait> traitList { get; set; }
         public HashSet<PhysicalInventoryItem> physicalInventory { get; set; }
         public HashSet<Character> friendsList { get; set; }
         public HashSet<Character> familyList { get; set; }
 
-        public Character()
+        public Character(string inputFirstName, string inputLastName, int inputAge)
         {
-            firstName = "";
-            lastName = "";
-            age = 0;
-            freeTime = 168; //7 days * 24 hrs/day = 168 hours
-            job = null;
+            firstName = inputFirstName;
+            lastName = inputLastName;
+            age = inputAge;
+
+            freeTime = 168;
+
             characterMentalHealth = new MentalHealth(0);
             characterPhysicalHealth = new PhysicalHealth(0);
             characterMoney = new Money(0);
@@ -42,19 +43,9 @@ namespace PovertyLife
             familyList = new HashSet<Character>();
         }
 
-        public Character(string inputFirstName, string inputLastName, int inputAge)
+        public void setJob(CharacterJob inputjob)
         {
-            firstName = inputFirstName;
-            lastName = inputLastName;
-            age = inputAge;
-            characterMentalHealth = new MentalHealth(0);
-            characterPhysicalHealth = new PhysicalHealth(0);
-            characterMoney = new Money(0);
-
-            traitList = new HashSet<CharacterTrait>();
-            physicalInventory = new HashSet<PhysicalInventoryItem>();
-            friendsList = new HashSet<Character>();
-            familyList = new HashSet<Character>();
+            job = inputjob;
         }
 
         public string CharacterSummary()

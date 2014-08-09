@@ -24,7 +24,7 @@ namespace PovertyLife
 
             Character arnoldWife = new Character("Maria", "Shriver", 43);
             Console.WriteLine(arnoldWife.CharacterSummary());
-            Character arnoldSon = new Character("John", "Marston", 43);
+            Character arnoldSon = new Character("John", "Marston", 10);
             Console.WriteLine(arnoldSon.CharacterSummary());
 
             try
