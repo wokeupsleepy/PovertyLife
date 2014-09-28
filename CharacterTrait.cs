@@ -19,6 +19,8 @@ namespace PovertyLife
         //void tickDownTurns is the CURRENT number of ticks before the GameEffect goes
         //traitEffectList is the list of GameEffects linked to this trait
 
+        public string hello = "Hello Github from Visual Studio."
+
         public CharacterTrait()
         {
 
