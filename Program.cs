@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using PovertyLife.Traits;
 using PovertyLife.Events;
 using PovertyLife.Character;
+using PovertyLife.DAL;
+using PovertyLife.TurnAndTimeDetermination;
 
 namespace PovertyLife
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             GameCharacter arnold = new GameCharacter("Arnold", "Strong", 45);
@@ -29,6 +32,23 @@ namespace PovertyLife
             Console.WriteLine(arnoldWife.CharacterSummary());
             GameCharacter arnoldSon = new GameCharacter("John", "Marston", 10);
             Console.WriteLine(arnoldSon.CharacterSummary());
+
+            DateTime thisTime = new DateTime(1990, 2, 13, 2, 1, 11);
+            GameCalendar calendar = new GameCalendar(thisTime);
+            calendar.ImportantDate = new DateTime(1991, 2, 13);
+            calendar.CurrentTime = calendar.AddYears(calendar.CurrentTime, 1);
+
+            Console.WriteLine(thisTime.ToString());
+            Console.WriteLine(calendar.GetYear(thisTime));
+
+            Console.WriteLine(calendar.ImportantDate.ToString());
+            Console.WriteLine(calendar.GetYear(calendar.ImportantDate));
+
+            Console.WriteLine(calendar.CheckDateTimesSameDate(calendar.ImportantDate, calendar.CurrentTime));
+
+            //Turn thisTurn = new Turn(calendar, calendar.CurrentTime);
+            InvoluntaryEventDetermination.SetArrayWeek();
+            InvoluntaryEventDetermination.WriteInvoluntataryEventDeterminationToConsole();
 
             try
             {
