@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PovertyLife.Traits;
+using PovertyLife.Events;
+using PovertyLife.Character;
 
 namespace PovertyLife
 {
@@ -10,7 +13,7 @@ namespace PovertyLife
     {
         static void Main(string[] args)
         {
-            Character arnold = new Character("Arnold", "Strong", 45);
+            GameCharacter arnold = new GameCharacter("Arnold", "Strong", 45);
             Console.WriteLine(arnold.CharacterSummary());
 
             GameEffect firstEffect = new GameEffectStat(arnold, 1, 5);
@@ -22,16 +25,16 @@ namespace PovertyLife
             GameEffect fourthEffect = new GameEffectStat(arnold, 1, -2);
             Console.WriteLine(arnold.CharacterSummary());
 
-            Character arnoldWife = new Character("Maria", "Shriver", 43);
+            GameCharacter arnoldWife = new GameCharacter("Maria", "Shriver", 43);
             Console.WriteLine(arnoldWife.CharacterSummary());
-            Character arnoldSon = new Character("John", "Marston", 10);
+            GameCharacter arnoldSon = new GameCharacter("John", "Marston", 10);
             Console.WriteLine(arnoldSon.CharacterSummary());
 
             try
             {
-                arnold.familyList.Add(arnoldWife);
-                arnold.familyList.Add(arnoldSon);
-                string dumbstring = arnold.DisplayCharacterList(arnold.familyList);
+                arnold.FamilyList.Add(arnoldWife);
+                arnold.FamilyList.Add(arnoldSon);
+                string dumbstring = arnold.DisplayCharacterList(arnold.FamilyList);
                 Console.WriteLine(dumbstring);
             }
             catch (NullReferenceException e)

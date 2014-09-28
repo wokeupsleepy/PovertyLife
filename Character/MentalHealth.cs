@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PovertyLife
+namespace PovertyLife.Character
 {
     class MentalHealth : CharacterStat
     {
@@ -12,7 +12,7 @@ namespace PovertyLife
 
         public MentalHealth(int startingValue)
         {
-            currentValue = startingValue;
+            CurrentValue = startingValue;
         }
 
     }

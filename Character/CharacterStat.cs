@@ -4,32 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PovertyLife
+namespace PovertyLife.Character
 {
     class CharacterStat
     {
-        public int currentValue { get; set; }
-        public int lowerThreshold { get; set; }
-        public int upperThreshold { get; set; }
+        public int CurrentValue { get; set; }
+        public int LowerThreshold { get; set; }
+        public int UpperThreshold { get; set; }
 
-        public string statState { get; set; }
+        public string StatState { get; set; }
 
-        public int statPoints { get; set; }
+        public int StatPoints { get; set; }
 
         public int resolveStatPoints()
         {
 
-            if (this.currentValue < this.lowerThreshold)
+            if (this.CurrentValue < this.LowerThreshold)
             {
-                statPoints = statPoints - 1;
+                StatPoints = StatPoints - 1;
             }
 
-            else if (this.currentValue > this.upperThreshold)
+            else if (this.CurrentValue > this.UpperThreshold)
             {
-                this.statPoints = this.statPoints + 1;
+                this.StatPoints = this.StatPoints + 1;
             }
 
-            return statPoints;
+            return StatPoints;
         }
 
     }

@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using PovertyLife.Character;
 
-namespace PovertyLife
+namespace PovertyLife.Traits
 {
     class CharacterTrait
     {
         private string traitName;
         private ArrayList traitEffectList = new ArrayList();
-        public int turnTicker;
-        public Character affectedCharacter { get; set; }
+
+        public int TurnTicker { get; set; }
+        public GameCharacter affectedCharacter { get; set; }
 
         //need to add functionality for turnTicker
         //int turnTicker stays the same, it's the number of hours before the GameEffect goes
@@ -24,7 +26,7 @@ namespace PovertyLife
 
         }
 
-        public CharacterTrait(string inputName, Character inputCharacter)
+        public CharacterTrait(string inputName, GameCharacter inputCharacter)
         {
             traitName = inputName;
             affectedCharacter = inputCharacter;
