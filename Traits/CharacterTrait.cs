@@ -10,7 +10,7 @@ namespace PovertyLife.Traits
 {
     class CharacterTrait
     {
-        private string traitName;
+        public string TraitName { get; set; }
         private ArrayList traitEffectList = new ArrayList();
 
         public int TurnTicker { get; set; }
@@ -26,15 +26,16 @@ namespace PovertyLife.Traits
 
         }
 
-        public CharacterTrait(string inputName, GameCharacter inputCharacter)
+        public CharacterTrait(string inputName, GameCharacter inputCharacter, int inputTurnTicker)
         {
-            traitName = inputName;
+            TraitName = inputName;
             affectedCharacter = inputCharacter;
+            TurnTicker = inputTurnTicker;
         }
 
         private void tickDownTurns()
         {
-
+            this.TurnTicker = this.TurnTicker - 1;
         }
 
     }
