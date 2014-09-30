@@ -10,15 +10,17 @@ namespace PovertyLife.TurnAndTimeDetermination
     {
         static private Random rand1 = new Random();
 
-        static public bool[] arrayWeek = new bool[7];
+        static public Dictionary<string, bool> ProbabilityWeek = new Dictionary<string,bool>();
 
-        static public void SetArrayWeek()
+        public static void InitializeProbabilityWeek() 
         {
-            foreach (bool day in arrayWeek)
-            {
-                //need to figure out how to set if day is going to have random event determination or not
-
-            }
+            ProbabilityWeek.Add("SUNDAY", false);
+            ProbabilityWeek.Add("MONDAY", false);
+            ProbabilityWeek.Add("TUESDAY", true);
+            ProbabilityWeek.Add("WEDNESDAY", false);
+            ProbabilityWeek.Add("THURSDAY", false);
+            ProbabilityWeek.Add("FRIDAY", true);
+            ProbabilityWeek.Add("SATURDAY", false);
         }
 
         static public int ReturnRandomInt(int desiredNumberOfReturns)
@@ -29,9 +31,14 @@ namespace PovertyLife.TurnAndTimeDetermination
 
         static public void WriteInvoluntataryEventDeterminationToConsole()
         {
-            foreach (bool element in InvoluntaryEventDetermination.arrayWeek)
+            bool defaultValue = false;
+
+            foreach (string key in ProbabilityWeek.Keys)
             {
-                Console.WriteLine(element);
+                if (ProbabilityWeek.TryGetValue(key, out defaultValue))
+                {
+                    Console.Write("Day: {0}, Value: {1} \n", key, defaultValue);
+                }
             }
         }
 

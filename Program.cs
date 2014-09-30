@@ -19,6 +19,8 @@ namespace PovertyLife
             GameCharacter arnold = new GameCharacter("Arnold", "Strong", 45);
             Console.WriteLine(arnold.CharacterSummary());
 
+            //Tests to perform to check GameEffects
+            Console.WriteLine("GameEffect tests");
             GameEffect firstEffect = new GameEffectStat(arnold, 1, 5);
             Console.WriteLine(arnold.CharacterSummary());
             GameEffect secondEffect = new GameEffectStat(arnold, 2, 6);
@@ -29,9 +31,7 @@ namespace PovertyLife
             Console.WriteLine(arnold.CharacterSummary());
 
             GameCharacter arnoldWife = new GameCharacter("Maria", "Shriver", 43);
-            Console.WriteLine(arnoldWife.CharacterSummary());
             GameCharacter arnoldSon = new GameCharacter("John", "Marston", 10);
-            Console.WriteLine(arnoldSon.CharacterSummary());
 
             DateTime thisTime = new DateTime(1990, 2, 13, 2, 1, 11);
             GameCalendar calendar = new GameCalendar(thisTime);
@@ -46,12 +46,14 @@ namespace PovertyLife
 
             Console.WriteLine(calendar.CheckDateTimesSameDate(calendar.ImportantDate, calendar.CurrentTime));
 
-            //Turn thisTurn = new Turn(calendar, calendar.CurrentTime);
-            InvoluntaryEventDetermination.SetArrayWeek();
+            Console.WriteLine("InvoluntaryEventDetermination tests");
+            InvoluntaryEventDetermination.InitializeProbabilityWeek();
             InvoluntaryEventDetermination.WriteInvoluntataryEventDeterminationToConsole();
+
 
             try
             {
+                Console.WriteLine("Character Family and Friends tests");
                 arnold.FamilyList.Add(arnoldWife);
                 arnold.FamilyList.Add(arnoldSon);
                 string dumbstring = arnold.DisplayCharacterList(arnold.FamilyList);
