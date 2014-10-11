@@ -33,23 +33,22 @@ namespace PovertyLife
             GameCharacter arnoldWife = new GameCharacter("Maria", "Shriver", 43);
             GameCharacter arnoldSon = new GameCharacter("John", "Marston", 10);
 
-            DateTime thisTime = new DateTime(1990, 2, 13, 2, 1, 11);
-            GameCalendar calendar = new GameCalendar(thisTime);
-            calendar.ImportantDate = new DateTime(1991, 2, 13);
-            calendar.CurrentTime = calendar.AddYears(calendar.CurrentTime, 1);
+            //DateTime thisTime = new DateTime(1990, 2, 13, 2, 1, 11);
+            //GameCalendar calendar = new GameCalendar(thisTime);
+            //calendar.ImportantDate = new DateTime(1991, 2, 13);
+            //calendar.CurrentTime = calendar.AddYears(calendar.CurrentTime, 1);
 
-            Console.WriteLine(thisTime.ToString());
-            Console.WriteLine(calendar.GetYear(thisTime));
+            //Console.WriteLine(thisTime.ToString());
+            //Console.WriteLine(calendar.GetYear(thisTime));
 
-            Console.WriteLine(calendar.ImportantDate.ToString());
-            Console.WriteLine(calendar.GetYear(calendar.ImportantDate));
+            //Console.WriteLine(calendar.ImportantDate.ToString());
+            //Console.WriteLine(calendar.GetYear(calendar.ImportantDate));
 
-            Console.WriteLine(calendar.CheckDateTimesSameDate(calendar.ImportantDate, calendar.CurrentTime));
+            //Console.WriteLine(calendar.CheckDateTimesSameDate(calendar.ImportantDate, calendar.CurrentTime));
 
             Console.WriteLine("InvoluntaryEventDetermination tests");
             InvoluntaryEventDetermination.InitializeProbabilityWeek();
             InvoluntaryEventDetermination.WriteInvoluntataryEventDeterminationToConsole();
-
 
             try
             {

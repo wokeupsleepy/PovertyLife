@@ -93,9 +93,9 @@ namespace PovertyLife.Events
         }
     }
 
-    class GameEffectAddFriendFamily : GameEffect
+    class GameEffectAddFriendOrFamily : GameEffect
     {
-        public GameEffectAddFriendFamily(GameCharacter inputCharacter, GameCharacter newConnectionCharacter, bool isFamily)
+        public GameEffectAddFriendOrFamily(GameCharacter inputCharacter, GameCharacter newConnectionCharacter, bool isFamily)
         {
             if (isFamily == true)
             {
