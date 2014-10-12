@@ -10,24 +10,35 @@ namespace PovertyLife.TurnAndTimeDetermination
     static class InvoluntaryEventDetermination
     {
         static public Dictionary<string, bool> ProbabilityWeek = new Dictionary<string, bool>();
+        static public Dictionary<int, bool> ProbabilityHour = new Dictionary<int, bool>();
+        static public Dictionary<int, bool> ProbabilityTurn = new Dictionary<int, bool>();
 
         static double dayProbability = 0.33;
-        static double hourProbability = 0.04;
+        static double hourProbability = 0.05;
         //remember, a turn = 15 min, so 4 turns in an hour
         static double turnProbability = 0.25;
 
         public static void InitializeProbabilityWeek()
         {
-            ProbabilityWeek.Add("SUNDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("MONDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("TUESDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("WEDNESDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("THURSDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("FRIDAY", InitializeDayProbability() <= dayProbability);
-            ProbabilityWeek.Add("SATURDAY", InitializeDayProbability() <= dayProbability);
+            ProbabilityWeek.Add("SUNDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("MONDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("TUESDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("WEDNESDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("THURSDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("FRIDAY", GenerateD100Probability() <= dayProbability);
+            ProbabilityWeek.Add("SATURDAY", GenerateD100Probability() <= dayProbability);
         }
 
-        static private double InitializeDayProbability()
+        public static void InitializeProbabilityHour()
+        {
+            int i = 0;
+            while(i < 24) {
+                ProbabilityHour.Add(i, GenerateD100Probability() <= hourProbability);
+                i++;
+            }
+        }
+
+        static private double GenerateD100Probability()
         {
             RNGCryptoServiceProvider randomGenerator = new RNGCryptoServiceProvider();
                 double generatedProbability;
@@ -51,6 +62,14 @@ namespace PovertyLife.TurnAndTimeDetermination
                 if (ProbabilityWeek.TryGetValue(key, out defaultValue))
                 {
                     Console.Write("Day: {0}, Value: {1} \n", key, defaultValue);
+                }
+            }
+
+            foreach (int key in ProbabilityHour.Keys)
+            {
+                if (ProbabilityHour.TryGetValue(key, out defaultValue))
+                {
+                    Console.Write("Hour: {0}, Value: {1} \n", key, defaultValue);
                 }
             }
 
