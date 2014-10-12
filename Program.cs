@@ -49,6 +49,7 @@ namespace PovertyLife
             Console.WriteLine("InvoluntaryEventDetermination tests");
             InvoluntaryEventDetermination.InitializeProbabilityWeek();
             InvoluntaryEventDetermination.InitializeProbabilityHour();
+            InvoluntaryEventDetermination.InitializeProbabilityTurn();
             InvoluntaryEventDetermination.WriteInvoluntataryEventDeterminationToConsole();
 
             try
