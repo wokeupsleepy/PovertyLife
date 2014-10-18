@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PovertyLife.Traits;
 using PovertyLife.Events;
+using PovertyLife.TurnAndTimeDetermination;
 
 namespace PovertyLife.Character
 {
@@ -26,6 +27,8 @@ namespace PovertyLife.Character
         public HashSet<PhysicalInventoryItem> PhysicalInventory { get; set; }
         public HashSet<GameCharacter> FriendsList { get; set; }
         public HashSet<GameCharacter> FamilyList { get; set; }
+
+        public InvoluntaryEventDetermination CharacterInvoluntaryEventDetermination { get; set; }
         public ArrayList EventLog = new ArrayList();
 
         public GameCharacter(string inputFirstName, string inputLastName, int inputAge)
