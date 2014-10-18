@@ -56,14 +56,10 @@
     <Compile Include="Events\VoluntaryEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TurnAndTimeDetermination\Day.cs" />
     <Compile Include="TurnAndTimeDetermination\GameCalendar.cs" />
     <Compile Include="TurnAndTimeDetermination\GameTimeInterface.cs" />
-    <Compile Include="TurnAndTimeDetermination\Hour.cs" />
     <Compile Include="TurnAndTimeDetermination\InvoluntaryEventDetermination.cs" />
     <Compile Include="TurnAndTimeDetermination\Turn.cs" />
-    <Compile Include="TurnAndTimeDetermination\TurnTick.cs" />
-    <Compile Include="TurnAndTimeDetermination\Week.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

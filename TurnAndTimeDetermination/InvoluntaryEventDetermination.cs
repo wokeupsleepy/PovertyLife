@@ -7,10 +7,12 @@ using System.Security.Cryptography;
 
 namespace PovertyLife.TurnAndTimeDetermination
 {
-    //Every character should have one InvoluntaryEventDetermination object.
-    //This will be used to figure out if an InvoluntaryEvent should interrupt the Character's daily actions.
-    //This class is only used to figure out IF (READ THIS: IF) an InvoluntaryEvent should be triggered.
-    //Another class (name TBD) will be used to figure out WHICH (READ THIS: WHICH) InvoluntaryEvent will be triggered.
+    /*
+     * Every character should have one InvoluntaryEventDetermination object.
+     * This will be used to figure out if an InvoluntaryEvent should interrupt the Character's daily actions.
+     * This class is only used to figure out IF (READ THIS: IF) an InvoluntaryEvent should be triggered.
+     * Another class (name TBD) will be used to figure out WHICH (READ THIS: WHICH) InvoluntaryEvent will be triggered.
+     */
 
     class InvoluntaryEventDetermination
     {
