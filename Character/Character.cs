@@ -28,7 +28,7 @@ namespace PovertyLife.Character
         public HashSet<GameCharacter> FriendsList { get; set; }
         public HashSet<GameCharacter> FamilyList { get; set; }
 
-        public InvoluntaryEventDetermination CharacterInvoluntaryEventDetermination { get; set; }
+        public InvoluntaryEventDetermination InvoluntaryEventDeterminer { get; set; }
         public ArrayList EventLog = new ArrayList();
 
         public GameCharacter(string inputFirstName, string inputLastName, int inputAge)

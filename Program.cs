@@ -46,12 +46,12 @@ namespace PovertyLife
 
             //Console.WriteLine(calendar.CheckDateTimesSameDate(calendar.ImportantDate, calendar.CurrentTime));
 
-            arnold.CharacterInvoluntaryEventDetermination = new InvoluntaryEventDetermination();
+            arnold.InvoluntaryEventDeterminer = new InvoluntaryEventDetermination();
 
-            arnold.CharacterInvoluntaryEventDetermination.InitializeProbabilityWeek();
-            arnold.CharacterInvoluntaryEventDetermination.InitializeProbabilityHour();
-            arnold.CharacterInvoluntaryEventDetermination.InitializeProbabilityTurn();
-            arnold.CharacterInvoluntaryEventDetermination.WriteInvoluntataryEventDeterminationToConsole();
+            arnold.InvoluntaryEventDeterminer.InitializeProbabilityWeek();
+            arnold.InvoluntaryEventDeterminer.InitializeProbabilityHour();
+            arnold.InvoluntaryEventDeterminer.InitializeProbabilityTurn();
+            arnold.InvoluntaryEventDeterminer.ResetProbabilityWeek();
 
             try
             {
