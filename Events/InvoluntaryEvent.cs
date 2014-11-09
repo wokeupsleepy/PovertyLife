@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace PovertyLife.Events
 {
+
+    /* 
+     * 
+     * 
+     * 
+     */
+
     class InvoluntaryEvent
     {
     }

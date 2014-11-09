@@ -30,7 +30,7 @@ namespace PovertyLife.TurnAndTimeDetermination
 
         //below 3 probabilities state the percentage chance an event will occur on a given in-game day, hour, or turn
         public double dayInvoluntaryEventProbability = 0.25;
-        public double hourInvoluntaryEventProbability = 0.03;
+        public double hourInvoluntaryEventProbability = 0.05;
         //remember, a turn = 15 min, so 4 turns in an hour
         public double turnInvoluntaryEventProbability = 0.15;
 
@@ -71,12 +71,18 @@ namespace PovertyLife.TurnAndTimeDetermination
     
         public void ResetProbabilityHour()
         {
-        ProbabilityHour = new Dictionary<int, bool>();
+            ProbabilityHour = new Dictionary<int, bool>();
         }
 
         public void ResetProbabilityTurn()
         {
-        ProbabilityTurn = new Dictionary<int, bool>();
+            ProbabilityTurn = new Dictionary<int, bool>();
+        }
+
+        public double CalculateExpectedValue()
+        {
+            double ExpectedValueOfEvents = (1 * dayInvoluntaryEventProbability) + (0 * (1 - dayInvoluntaryEventProbability));
+            return ExpectedValueOfEvents;
         }
 
         private double GenerateD100Probability()

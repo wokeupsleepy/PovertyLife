@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character\Character.cs" />
+    <Compile Include="Events\GameEvent.cs" />
     <Compile Include="Traits\CharacterJob.cs" />
     <Compile Include="Character\CharacterStat.cs" />
     <Compile Include="Traits\CharacterTrait.cs" />
