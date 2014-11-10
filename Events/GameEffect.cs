@@ -10,7 +10,13 @@ namespace PovertyLife.Events
 {
     public class GameEffect
     {
-        protected GameCharacter affectedCharacter;
+        public GameCharacter affectedCharacter;
+
+        public virtual void ExecuteEffect()
+        {
+
+        }
+
     }
 
     public class GameEffectStat : GameEffect
@@ -20,10 +26,19 @@ namespace PovertyLife.Events
             MENTALHEALTH, PHYSICALHEALTH, MONEY
         }
 
-        public GameEffectStat(GameCharacter inputCharacter, StatChangeType inputStatChange, int statChangeMagnitude)
+        private StatChangeType statChangeType;
+        private int statChangeMagnitude;
+
+        public GameEffectStat(GameCharacter inputGameCharacter, StatChangeType inputChangeType, int inputStatChangeMagintude)
         {
-            affectedCharacter = inputCharacter;
-            switch (inputStatChange)
+            affectedCharacter = inputGameCharacter;
+            statChangeType = inputChangeType;
+            statChangeMagnitude = inputStatChangeMagintude;
+        }
+
+        public override void ExecuteEffect()
+        {
+            switch (statChangeType)
             {
                 case StatChangeType.MENTALHEALTH:
                     affectedCharacter.CharacterMentalHealth.CurrentValue += statChangeMagnitude;
