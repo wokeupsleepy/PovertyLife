@@ -9,12 +9,8 @@ namespace PovertyLife.Events
 {
     //Events should have a specific character target and a specific set of GameEffects that occur
 
-    interface GameEvent
+    public interface GameEvent
     {
-        GameCharacter AffectedCharacter { get; set; }
-        HashSet<GameEffect> EventGameEffects { get; set; }
-        string FlavorText { get; set; }
-
         void ExecuteEffectsCharacter();
     }
 

@@ -8,12 +8,12 @@ using PovertyLife.Traits;
 
 namespace PovertyLife.Events
 {
-    class GameEffect
+    public class GameEffect
     {
         protected GameCharacter affectedCharacter;
     }
 
-    class GameEffectStat : GameEffect
+    public class GameEffectStat : GameEffect
     {
         public enum StatChangeType
         {
@@ -43,7 +43,7 @@ namespace PovertyLife.Events
 
     }
 
-    class GameEffectStatUpperThreshold : GameEffect
+    public class GameEffectStatUpperThreshold : GameEffect
     {
         public GameEffectStatUpperThreshold(GameCharacter inputCharacter, int statChangeType, int upperThresholdChange)
         {
@@ -67,7 +67,7 @@ namespace PovertyLife.Events
         }
     }
 
-    class GameEffectStatLowerThreshold : GameEffect
+    public class GameEffectStatLowerThreshold : GameEffect
     {
         public GameEffectStatLowerThreshold(GameCharacter inputCharacter, int statChangeType, int lowerThresholdChange)
         {
@@ -91,7 +91,7 @@ namespace PovertyLife.Events
         }
     }
 
-    class GameEffectTrait : GameEffect
+    public class GameEffectTrait : GameEffect
     {
         public GameEffectTrait(GameCharacter inputCharacter, CharacterTrait inputTrait)
         {
@@ -99,7 +99,7 @@ namespace PovertyLife.Events
         }
     }
 
-    class GameEffectAddFriendOrFamily : GameEffect
+    public class GameEffectAddFriendOrFamily : GameEffect
     {
         public GameEffectAddFriendOrFamily(GameCharacter inputCharacter, GameCharacter newConnectionCharacter, bool isFamily)
         {
@@ -114,7 +114,7 @@ namespace PovertyLife.Events
         }
     }
 
-    class GameEffectAddInventory : GameEffect
+    public class GameEffectAddInventory : GameEffect
     {
         public GameEffectAddInventory(GameCharacter inputCharacter, PhysicalInventoryItem inputInventoryItem)
         {

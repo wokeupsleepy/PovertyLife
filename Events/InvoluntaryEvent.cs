@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PovertyLife.Character;
 
 namespace PovertyLife.Events
 {
@@ -13,7 +14,15 @@ namespace PovertyLife.Events
      * 
      */
 
-    class InvoluntaryEvent
+    public class InvoluntaryEvent : GameEvent
     {
+        GameCharacter AffectedCharacter { get; set; }
+        HashSet<GameEffect> EventGameEffects { get; set; }
+        string FlavorText { get; set; }
+
+        void ExecuteEffectsCharacter()
+        {
+            FlavorText = null;
+        }
     }
 }

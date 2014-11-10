@@ -7,7 +7,7 @@ using PovertyLife.Events;
 
 namespace PovertyLife.Traits
 {
-    class CharacterJob : CharacterTrait
+    public class CharacterJob : CharacterTrait
     {
         public string JobName { get; set; }
 

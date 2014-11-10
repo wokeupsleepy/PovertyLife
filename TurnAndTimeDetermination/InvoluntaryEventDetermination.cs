@@ -22,7 +22,7 @@ namespace PovertyLife.TurnAndTimeDetermination
      * The inverse of this would give the likelihood a given week having any events.
      */
 
-    class InvoluntaryEventDetermination
+    public class InvoluntaryEventDetermination
     {
         public Dictionary<string, bool> ProbabilityWeek = new Dictionary<string, bool>();
         public Dictionary<int, bool> ProbabilityHour = new Dictionary<int, bool>();

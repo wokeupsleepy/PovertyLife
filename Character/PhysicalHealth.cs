@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PovertyLife.Character
 {
-    class PhysicalHealth : CharacterStat
+    public class PhysicalHealth : CharacterStat
     {
         string[] energyStates = new string[5] {"exhausted", "tired", "healthy", "active", "fit" };
 

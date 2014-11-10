@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PovertyLife.Character
 {
-    class PhysicalInventoryItem
+    public class PhysicalInventoryItem
     {
     }
 }

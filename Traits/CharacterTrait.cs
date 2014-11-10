@@ -8,7 +8,7 @@ using PovertyLife.Character;
 
 namespace PovertyLife.Traits
 {
-    class CharacterTrait
+    public class CharacterTrait
     {
         public string TraitName { get; set; }
         private ArrayList traitEffectList = new ArrayList();

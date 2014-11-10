@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PovertyLife.Character
 {
-    class MentalHealth : CharacterStat
+    public class MentalHealth : CharacterStat
     {
         string[] mentalHealthStates = new string[5] {"depressed", "sad", "normal", "content", "fulfilled"};
 

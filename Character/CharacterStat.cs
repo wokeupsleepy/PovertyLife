@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PovertyLife.Character
 {
-    class CharacterStat
+    public class CharacterStat
     {
         public int CurrentValue { get; set; }
         public int LowerThreshold { get; set; }
