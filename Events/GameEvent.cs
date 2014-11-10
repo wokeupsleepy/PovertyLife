@@ -11,11 +11,11 @@ namespace PovertyLife.Events
 
     interface GameEvent
     {
-        public GameCharacter AffectedCharacter { get; set; }
-        public HashSet<GameEffect> EventGameEffects { get; set; }
-        public string FlavorText { get; set; }
+        GameCharacter AffectedCharacter { get; set; }
+        HashSet<GameEffect> EventGameEffects { get; set; }
+        string FlavorText { get; set; }
 
-        public void ExecuteEffectsCharacter();
+        void ExecuteEffectsCharacter();
     }
 
 }

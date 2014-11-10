@@ -15,18 +15,23 @@ namespace PovertyLife.Events
 
     class GameEffectStat : GameEffect
     {
-        public GameEffectStat(GameCharacter inputCharacter, int statChangeType, int statChangeMagnitude)
+        public enum StatChangeType
+        {
+            MENTALHEALTH, PHYSICALHEALTH, MONEY
+        }
+
+        public GameEffectStat(GameCharacter inputCharacter, StatChangeType inputStatChange, int statChangeMagnitude)
         {
             affectedCharacter = inputCharacter;
-            switch (statChangeType)
+            switch (inputStatChange)
             {
-                case 1:
+                case StatChangeType.MENTALHEALTH:
                     affectedCharacter.CharacterMentalHealth.CurrentValue += statChangeMagnitude;
                     break;
-                case 2:
+                case StatChangeType.PHYSICALHEALTH:
                     affectedCharacter.CharacterPhysicalHealth.CurrentValue += statChangeMagnitude;
                     break;
-                case 3:
+                case StatChangeType.MONEY:
                     affectedCharacter.CharacterMoney.CurrentValue += statChangeMagnitude;
                     break;
                 default:
@@ -35,6 +40,7 @@ namespace PovertyLife.Events
                     break;
             }
         }
+
     }
 
     class GameEffectStatUpperThreshold : GameEffect

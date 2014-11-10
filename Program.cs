@@ -21,13 +21,7 @@ namespace PovertyLife
 
             //Tests to perform to check GameEffects
             Console.WriteLine("GameEffect tests");
-            GameEffect firstEffect = new GameEffectStat(arnold, 1, 5);
-            Console.WriteLine(arnold.CharacterSummary());
-            GameEffect secondEffect = new GameEffectStat(arnold, 2, 6);
-            Console.WriteLine(arnold.CharacterSummary());
-            GameEffect thirdEffect = new GameEffectStat(arnold, 3, 7);
-            Console.WriteLine(arnold.CharacterSummary());
-            GameEffect fourthEffect = new GameEffectStat(arnold, 1, -2);
+            GameEffect firstEffect = new GameEffectStat(arnold, GameEffectStat.StatChangeType.MENTALHEALTH, 5);
             Console.WriteLine(arnold.CharacterSummary());
 
             GameCharacter arnoldWife = new GameCharacter("Maria", "Shriver", 43);
