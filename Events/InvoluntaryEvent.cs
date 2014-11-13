@@ -20,7 +20,7 @@ namespace PovertyLife.Events
         HashSet<GameEffect> EventGameEffects { get; set; }
         string FlavorText { get; set; }
 
-        void ExecuteEffectsCharacter()
+        public void ExecuteEffectsCharacter()
         {
             FlavorText = null;
         }

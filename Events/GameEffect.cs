@@ -11,6 +11,7 @@ namespace PovertyLife.Events
     public class GameEffect
     {
         protected GameCharacter affectedCharacter;
+        public virtual void ExecuteEffect() { }
     }
 
     public class GameEffectStat : GameEffect
@@ -20,19 +21,28 @@ namespace PovertyLife.Events
             MENTALHEALTH, PHYSICALHEALTH, MONEY
         }
 
-        public GameEffectStat(GameCharacter inputCharacter, StatChangeType inputStatChange, int statChangeMagnitude)
+        public StatChangeType ChangedStatType { get; set; }
+        public int StatChangeMagnitude { get; set; }
+
+        public GameEffectStat(GameCharacter inputAffectedCharacter, StatChangeType inputChangedStatType, int inputStatChangeMagnitude)
         {
-            affectedCharacter = inputCharacter;
-            switch (inputStatChange)
+            affectedCharacter = inputAffectedCharacter;
+            ChangedStatType = inputChangedStatType;
+            StatChangeMagnitude = inputStatChangeMagnitude;
+        }
+
+        public override void ExecuteEffect()
+        {
+            switch (ChangedStatType)
             {
                 case StatChangeType.MENTALHEALTH:
-                    affectedCharacter.CharacterMentalHealth.CurrentValue += statChangeMagnitude;
+                    affectedCharacter.CharacterMentalHealth.CurrentValue += StatChangeMagnitude;
                     break;
                 case StatChangeType.PHYSICALHEALTH:
-                    affectedCharacter.CharacterPhysicalHealth.CurrentValue += statChangeMagnitude;
+                    affectedCharacter.CharacterPhysicalHealth.CurrentValue += StatChangeMagnitude;
                     break;
                 case StatChangeType.MONEY:
-                    affectedCharacter.CharacterMoney.CurrentValue += statChangeMagnitude;
+                    affectedCharacter.CharacterMoney.CurrentValue += StatChangeMagnitude;
                     break;
                 default:
                     Console.WriteLine("USE A PROPER GameEffectStat statChangeType input value");
@@ -40,7 +50,6 @@ namespace PovertyLife.Events
                     break;
             }
         }
-
     }
 
     public class GameEffectStatUpperThreshold : GameEffect
