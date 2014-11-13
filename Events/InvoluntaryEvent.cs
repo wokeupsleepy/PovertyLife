@@ -17,12 +17,15 @@ namespace PovertyLife.Events
     public class InvoluntaryEvent : GameEvent
     {
         GameCharacter AffectedCharacter { get; set; }
-        HashSet<GameEffect> EventGameEffects { get; set; }
+        List<GameEffect> EventGameEffects { get; set; }
         string FlavorText { get; set; }
 
         public void ExecuteEffectsCharacter()
         {
-            FlavorText = null;
+            foreach (GameEffect g_effect in EventGameEffects)
+            {
+                g_effect.ExecuteEffect();
+            }
         }
     }
 }
