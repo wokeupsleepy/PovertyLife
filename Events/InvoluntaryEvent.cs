@@ -9,8 +9,14 @@ namespace PovertyLife.Events
 {
 
     /* 
-     * 
-     * 
+     * InvolutaryEvent objects are accidental effects
+     * Can perform the following things:
+     * Add GameEffect to EventGameEffects,
+     * execute all GameEffect objects in EventGameEffects,
+     * display FlavorText in game interface,
+     * support user choice,
+     * support probability rolls based on user choices,
+     * support chaining InvoluntaryEvents and choosing to initiate VoluntaryEvents
      * 
      */
 
@@ -27,5 +33,6 @@ namespace PovertyLife.Events
                 g_effect.ExecuteEffect();
             }
         }
+
     }
 }
