@@ -22,13 +22,47 @@ namespace PovertyLife.Events
 
     public class InvoluntaryEvent : GameEvent
     {
-        GameCharacter AffectedCharacter { get; set; }
-        List<GameEffect> EventGameEffects { get; set; }
-        string FlavorText { get; set; }
+        GameCharacter affectedCharacter;
+        List<GameEffect> eventGameEffects;
+        EventChain eventChainInitiator;
 
-        public void ExecuteEffectsCharacter()
+        public List<GameEffect> EventGameEffects
         {
-            foreach (GameEffect g_effect in EventGameEffects)
+            get
+            {
+                return eventGameEffects;
+            }
+            set
+            {
+                eventGameEffects = value;
+            }
+        }
+        public GameCharacter AffectedCharacter
+        {
+            get
+            {
+                return affectedCharacter;
+            }
+            set
+            {
+                affectedCharacter = value;
+            }
+        }
+        public EventChain EventChainInitiator
+        {
+            get
+            {
+                return eventChainInitiator;
+            }
+            set
+            {
+                eventChainInitiator = value;
+            }
+        }
+
+        public void ExecuteEffectsOnCharacter()
+        {
+            foreach (GameEffect g_effect in eventGameEffects)
             {
                 g_effect.ExecuteEffect();
             }

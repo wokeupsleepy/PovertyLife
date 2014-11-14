@@ -11,7 +11,15 @@ namespace PovertyLife.Events
 
     public interface GameEvent
     {
-        void ExecuteEffectsCharacter();
+        GameCharacter AffectedCharacter { get; set; }
+        List<GameEffect> EventGameEffects { get; set; }
+        string FlavorText { get; set; }
+
+        //This states the beginning of an EventChain,
+        //If it's another link in an EventChain, that won't need to be stated
+        EventChain EventChainInitiator { get; set; }
+
+        void ExecuteEffectsOnCharacter();
     }
 
 }
