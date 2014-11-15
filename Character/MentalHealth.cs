@@ -8,7 +8,8 @@ namespace PovertyLife.Character
 {
     public class MentalHealth : CharacterStat
     {
-        string[] mentalHealthStates = new string[5] {"depressed", "sad", "normal", "content", "fulfilled"};
+        //all statStates 
+        string[] mentalHealthStates = new string[5] {"depressed", "sad", "okay", "content", "fulfilled"};
 
         public MentalHealth(int startingValue)
         {

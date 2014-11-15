@@ -8,6 +8,7 @@ using PovertyLife.Events;
 using PovertyLife.Character;
 using PovertyLife.DAL;
 using PovertyLife.TurnAndTimeDetermination;
+using System.Web.Script.Serialization;
 
 namespace PovertyLife
 {
@@ -55,6 +56,16 @@ namespace PovertyLife
                 arnold.FamilyList.Add(arnoldSon);
                 string dumbstring = arnold.DisplayCharacterList(arnold.FamilyList);
                 Console.WriteLine(dumbstring);
+
+                string jsonArnold = new JavaScriptSerializer().Serialize(arnold);
+                string jsonArnoldSon = new JavaScriptSerializer().Serialize(arnoldSon);
+                string jsonArnoldWife = new JavaScriptSerializer().Serialize(arnoldWife);
+
+                //var exe = 123;
+
+                Console.WriteLine(jsonArnold);
+                Console.WriteLine(jsonArnoldSon);
+                Console.WriteLine(jsonArnoldWife);
             }
             catch (NullReferenceException e)
             {

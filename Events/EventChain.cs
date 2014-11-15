@@ -16,7 +16,7 @@ namespace PovertyLife.Events
      * 
      */
 
-    class EventChain
+    public class EventChain
     {
     }
 }

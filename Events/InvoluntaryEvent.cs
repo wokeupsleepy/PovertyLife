@@ -25,6 +25,7 @@ namespace PovertyLife.Events
         GameCharacter affectedCharacter;
         List<GameEffect> eventGameEffects;
         EventChain eventChainInitiator;
+        string flavorText;
 
         public List<GameEffect> EventGameEffects
         {
@@ -57,6 +58,16 @@ namespace PovertyLife.Events
             set
             {
                 eventChainInitiator = value;
+            }
+        }
+        public string FlavorText{
+            get
+            {
+                return flavorText;
+            }
+            set
+            {
+                flavorText = value;
             }
         }
 

@@ -8,7 +8,7 @@ namespace PovertyLife.Character
 {
     public class PhysicalHealth : CharacterStat
     {
-        string[] energyStates = new string[5] {"exhausted", "tired", "healthy", "active", "fit" };
+        string[] energyStates = new string[5] {"exhausted", "tired", "okay", "active", "fit" };
 
         string[] weightStates = new string[5] {"skeletal","thin","average","overweight","obese" };
         

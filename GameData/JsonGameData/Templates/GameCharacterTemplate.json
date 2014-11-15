@@ -1,0 +1,53 @@
+﻿{
+    "GameCharacter": {
+        "GameCharacterId": 0,
+        "FirstName": "firstname",
+        "LastName": "lastname",
+        "Age": 0,
+        "FreeTime": 0,
+        "CharacterStats": {
+            "MentalHealth": {
+                "CurrentValue": 0,
+                "LowerThreshold": 0,
+                "UpperThreshold": 0,
+                "StatState": "okay",
+                "StatPoints": 0
+            },
+            "PhysicalHealth": {
+                "CurrentValue": 0,
+                "LowerThreshold": 0,
+                "UpperThreshold": 0,
+                "StatState": "okay",
+                "WeightState": "average",
+                "StatPoints": 0
+            },
+            "Money": {
+                "CurrentValue": 0,
+                "LowerThreshold": 0,
+                "UpperThreshold": 0,
+                "StatState": "stable",
+                "StatPoints": 0
+            }
+        },
+        "Job": {
+            "Title": "jobtitle",
+            "DaysBetweenPaychecks": 0,
+            "PaycheckAmount": 0
+        },
+        "TraitList": {
+
+        },
+        "PhysicalInventory": {
+
+        },
+        "FriendsList": {
+
+        },
+        "FamilyList": {
+
+        },
+        "EventLog": { 
+
+        }
+    }
+}

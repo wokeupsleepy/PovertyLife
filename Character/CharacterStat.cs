@@ -12,6 +12,8 @@ namespace PovertyLife.Character
         public int LowerThreshold { get; set; }
         public int UpperThreshold { get; set; }
 
+        //StatStates are adjectives to give the player an idea of how they are doing
+        //In-game they won't be exposed to CurrentValue, thresholds, StatPoints, etc., StatState will give them an idea
         public string StatState { get; set; }
 
         public int StatPoints { get; set; }
