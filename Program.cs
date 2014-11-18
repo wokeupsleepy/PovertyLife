@@ -57,15 +57,32 @@ namespace PovertyLife
                 string dumbstring = arnold.DisplayCharacterList(arnold.FamilyList);
                 Console.WriteLine(dumbstring);
 
-                string jsonArnold = new JavaScriptSerializer().Serialize(arnold);
-                string jsonArnoldSon = new JavaScriptSerializer().Serialize(arnoldSon);
-                string jsonArnoldWife = new JavaScriptSerializer().Serialize(arnoldWife);
 
-                //var exe = 123;
+                //TODO: Need to create serializable objects here, only have properties, no methods, create a separate class to perform operations
+                //string jsonArnold = new JavaScriptSerializer().Serialize(arnold);
+                //string jsonArnoldSon = new JavaScriptSerializer().Serialize(arnoldSon);
+                //string jsonArnoldWife = new JavaScriptSerializer().Serialize(arnoldWife);
 
-                Console.WriteLine(jsonArnold);
-                Console.WriteLine(jsonArnoldSon);
-                Console.WriteLine(jsonArnoldWife);
+                ////var exe = 123;
+
+                //Console.WriteLine(jsonArnold);
+                //Console.WriteLine(jsonArnoldSon);
+                //Console.WriteLine(jsonArnoldWife);
+
+                //TODO: Need to do this so that a data can be passed in JSON format
+                Console.WriteLine("Javascript Serializer JSON test");
+
+                TestEntity tester = new TestEntity
+                {
+                    Id = 0,
+                    Name = "Thisser"
+                };
+
+                string testEntitySerialized = new JavaScriptSerializer().Serialize(tester);
+
+                Console.WriteLine(testEntitySerialized);
+
+
             }
             catch (NullReferenceException e)
             {

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character\Character.cs" />
+    <Compile Include="Character\TestEntity.cs" />
     <Compile Include="Events\EventChain.cs" />
     <Compile Include="Events\GameEvent.cs" />
     <Compile Include="GameInterface\GameMessageDisplayer.cs" />
